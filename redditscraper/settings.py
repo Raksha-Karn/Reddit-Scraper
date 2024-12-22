@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from scrapy.settings.default_settings import DOWNLOADER, DOWNLOADER_MIDDLEWARES
 
 BOT_NAME = "redditscraper"
 
@@ -17,7 +18,7 @@ NEWSPIDER_MODULE = "redditscraper.spiders"
 #USER_AGENT = "redditscraper (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

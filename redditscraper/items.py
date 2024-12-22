@@ -7,6 +7,12 @@ import scrapy
 
 
 class RedditscraperItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    url = scrapy.Field()
+    title = scrapy.Field()
+    text = scrapy.Field()
+    media = scrapy.Field()
+    author = scrapy.Field()
+    subreddit = scrapy.Field()
+    date = scrapy.Field()
+    likes = scrapy.Field()
+    comments = scrapy.Field()
