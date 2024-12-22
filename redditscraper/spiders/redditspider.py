@@ -12,7 +12,7 @@ class RedditspiderSpider(scrapy.Spider):
 
         for sub in subreddit:
             reddit_search_url = f'https://old.reddit.com/r/{sub}/top/?sort=top&t=week'
-            yield scrapy.Request(url=reddit_search_url, callback=self.discover_posts, meta={'subreddit': subreddit})
+            yield scrapy.Request(url=reddit_search_url, callback=self.discover_posts, meta={'subreddit': subreddit, 'proxy': None})
 
     def discover_posts(self, response):
         if RedditspiderSpider.urls_count >= 50:

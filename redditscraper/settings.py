@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
 from scrapy.settings.default_settings import DOWNLOADER, DOWNLOADER_MIDDLEWARES
 
 BOT_NAME = "redditscraper"
@@ -49,11 +50,13 @@ ROBOTSTXT_OBEY = False
 #    "redditscraper.middlewares.RedditscraperSpiderMiddleware": 543,
 #}
 
-# Enable or disable downloader middlewares
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "redditscraper.middlewares.RedditscraperDownloaderMiddleware": 543,
-#}
+PROXY_POOL_ENABLED = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
+    'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
+}
+
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
